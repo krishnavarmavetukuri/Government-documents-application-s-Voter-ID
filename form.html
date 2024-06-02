@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Service Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Roboto', sans-serif;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 50px;
+        }
+        .header-title {
+            display: flex;
+            align-items: center;
+        }
+        .header-title h1 {
+            margin-left: 10px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .header-user {
+            display: flex;
+            align-items: center;
+        }
+        .header-user img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin-top: 60px; /* Adjusted for header height */
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .sidebar a i {
+            margin-right: 10px;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .sidebar a.active {
+            background-color: #007bff; /* Active link color */
+            color: white;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: calc(100% - 270px);
+            margin-top: 60px; /* Adjusted for header height */
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 10px;
+        }
+        .card-header {
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+        }
+        .form-group label {
+            font-weight: 500;
+        }
+        .form-control {
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s, border-color 0.3s;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .status-table {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .status-table th, .status-table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+        .status-table thead {
+            background-color: #007bff;
+            color: white;
+        }
+        .status-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+        .status-step {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        .status-step div {
+            text-align: center;
+            position: relative;
+        }
+        .status-step .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: green;
+            display: inline-block;
+            color: white;
+            line-height: 30px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .status-step .line {
+            flex-grow: 1;
+            height: 2px;
+            background-color: green;
+            margin: 0 10px;
+        }
+        .status-step .circle::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">
+            <img src="https://voters.eci.gov.in/static/media/Portallogo.239672214918b407e9c7d3e4312b8ac4.svg" alt="Election Commission of India Logo">
+            <h1>भारत निर्वाचन आयोग / Election Commission of India</h1>
+        </div>
+        <div class="header-user">
+            <img src="https://voters.eci.gov.in/static/media/profile.3ccdd616bcbd743c61a316db672c000a.svg" alt="User Icon">
+            <div>मतदाता सेवा पोर्टल / VOTERS' SERVICE PORTAL<br>Priya Rani Verma</div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="#" class="active"><i class="fas fa-file-alt"></i>Forms</a>
+        <a href="#" id="trackStatusLink"><i class="fas fa-tasks"></i>Track Application Status</a>
+        <a href="self and family.html"><i class="fas fa-user"></i>Self and Family</a>
+        <a href="change password.html"><i class="fas fa-key"></i>Change Password</a>
+        <a href="download epic.html"><i class="fas fa-download"></i>Download e-EPIC</a>
+    </div>
+    <div class="content">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h4>Forms</h4>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card" id="form6Card">
+                    <div class="card-body text-center">
+                        <img src="https://voters.eci.gov.in/static/media/form6.352c642e61dcf9b6ed51182201130073.svg" alt="Icon" style="width:50px; height:50px;">
+                        <h5>Form 6</h5>
+                        <p>Register as a New Voter/Elector</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('trackStatusLink').addEventListener('click', function(event) {
+                event.preventDefault();
+                window.location.href = 'application with tracking.html';
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add event listener to the "Form 6" card
+            document.getElementById('form6Card').addEventListener('click', function(event) {
+                event.preventDefault();
+                window.location.href = 'form 6.php'; // Redirect to form6.html
+            });
+        });
+    </script>
+</body>
+</html>

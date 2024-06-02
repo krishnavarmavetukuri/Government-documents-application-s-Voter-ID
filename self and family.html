@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Service Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Roboto', sans-serif;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 50px;
+        }
+        .header-title {
+            display: flex;
+            align-items: center;
+        }
+        .header-title h1 {
+            margin-left: 10px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .header-user {
+            display: flex;
+            align-items: center;
+        }
+        .header-user img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .navbar {
+            background-color: #0044cc;
+            color: white;
+            padding: 10px 0;
+        }
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar .navbar-brand {
+            color: white;
+            font-weight: bold;
+        }
+        .header-controls {
+            display: flex;
+            align-items: center;
+        }
+        .header-controls h5 {
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
+        .ml-auto {
+            margin-left: auto;
+        }
+        .sidebar {
+            background-color: #343a40;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .sidebar .nav-link {
+            color: white;
+            margin-bottom: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .sidebar .nav-link i {
+            margin-right: 10px;
+        }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .content {
+            padding: 20px;
+        }
+        .card {
+            border: none;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+        .fa-edit {
+            color: #007bff;
+        }
+        .flex-grow-1 {
+            flex-grow: 1;
+        }
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">
+            <img src="https://voters.eci.gov.in/static/media/Portallogo.239672214918b407e9c7d3e4312b8ac4.svg" alt="Election Commission of India Logo">
+            <h1>भारत निर्वाचन आयोग / Election Commission of India</h1>
+        </div>
+        <div class="header-user">
+            <img src="https://voters.eci.gov.in/static/media/profile.3ccdd616bcbd743c61a316db672c000a.svg" alt="User Icon">
+            <div>मतदाता सेवा पोर्टल / VOTERS' SERVICE PORTAL<br>Priya Rani Verma</div>
+        </div>
+    </div>
+    <div class="d-flex">
+        <nav class="sidebar">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="form.html"><i class="fas fa-file-alt"></i> Forms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="application with tracking.html"><i class="fas fa-truck"></i> Track Application Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-user"></i> Self and Family</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="change password.html"><i class="fas fa-key"></i> Change Password</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="download epic.html"><i class="fas fa-download"></i> Download e-EPIC</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="content flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-4">Self and Family</h5>
+                <button class="btn btn-primary">+ Add member</button>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p><strong>Name:</strong> Priya Rani Verma</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p><strong>Mobile Number:</strong> 9876543210</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p><strong>Email Address:</strong> priyaraniv@example.com</p>
+                        </div>
+                    </div>
+                    <a href="#" class="text-primary"><i class="fas fa-edit"></i> Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

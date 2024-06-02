@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Application Status - Voter's Service Portal</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Roboto', sans-serif;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 50px;
+        }
+        .header-title {
+            display: flex;
+            align-items: center;
+        }
+        .header-title h1 {
+            margin-left: 10px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .header-user {
+            display: flex;
+            align-items: center;
+        }
+        .header-user img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin-top: 60px; /* Adjusted for header height */
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .sidebar a i {
+            margin-right: 10px;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: calc(100% - 270px);
+            margin-top: 60px; /* Adjusted for header height */
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 10px;
+        }
+        .card-header {
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+        }
+        .form-group label {
+            font-weight: 500;
+        }
+        .form-control {
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s, border-color 0.3s;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .status-table {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .status-table th, .status-table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+        .status-table thead {
+            background-color: #007bff;
+            color: white;
+        }
+        .status-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+        .status-step {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        .status-step div {
+            text-align: center;
+            position: relative;
+        }
+        .status-step .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: green;
+            display: inline-block;
+            color: white;
+            line-height: 30px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .status-step .line {
+            flex-grow: 1;
+            height: 2px;
+            background-color: green;
+            margin: 0 10px;
+        }
+        .status-step .circle::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLifS3m4B3SBF0SzDMGS0aT1Ae_SwK80AMw&s" alt="Election Commission of India Logo">
+            <h1>भारत निर्वाचन आयोग / Election Commission of India</h1>
+        </div>
+        <div class="header-user">
+            <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="User Icon">
+            <div>मतदाता सेवा पोर्टल / VOTERS' SERVICE PORTAL<br>Priya Rani Verma</div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="form.html"><i class="fas fa-user"></i>Forms</a>
+        <a href="#" class="active"><i class="fas fa-home"></i>Track Application Status</a>
+        <a href="self and family.html"><i class="fas fa-user"></i>Self and Family</a>
+        <a href="change password.html"><i class="fas fa-key"></i>Change Password</a>
+        <a href="download epic.html"><i class="fas fa-download"></i>Download e-EPIC</a>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    Track Application Status
+                </div>
+                <div class="card-body">
+                    <form id="trackStatusForm">
+                        <div class="form-group">
+                            <label for="referenceNumber">Reference Number *</label>
+                            <input type="text" class="form-control" id="referenceNumber" placeholder="Enter Reference Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <select class="form-control" id="state" required>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <!-- Add other states as needed -->
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" id="submitButton">Submit</button>
+                    </form>
+
+                    <table class="table table-bordered table-hover status-table mt-4">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>S. Num.</th>
+                                <th>Reference Number</th>
+                                <th>State</th>
+                                <th>AC</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Form Type</th>
+                                <th>Submission Date</th>
+                                <th>Current Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>MNO432109876</td>
+                                <td>Telangana</td>
+                                <td>Serilingampally</td>
+                                <td>Priya Rani</td>
+                                <td>Verma</td>
+                                <td>FORM6</td>
+                                <td>02-06-2024</td>
+                                <td>EROLL UPDATED</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="status-step">
+                        <div>
+                            <div class="circle"></div>
+                            <div>Submitted<br>02-06-2024</div>
+                        </div>
+                        <div class="line"></div>
+                        <div>
+                            <div class="circle"></div>
+                            <div>BLO Appointed<br>02-06-2024</div>
+                        </div>
+                        <div class="line"></div>
+                        <div>
+                            <div class="circle"></div>
+                            <div>Field Verified<br>02-06-2024</div>
+                        </div>
+                        <div class="line"></div>
+                        <div>
+                            <div class="circle"></div>
+                            <div>Accepted<br>02-06-2024</div>
+                        </div>
+                        <div class="line"></div>
+                        <div>
+                            <div class="circle"></div>
+                            <div>EPIC Generated<br>SWXXXXXXXX</div>
+                        </div>
+                        <div class="line"></div>
+                        <div>
+                            <div class="circle"></div>
+                            <div>Delivered<br>BSXXXXXX</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#submitButton').click(function() {
+                var referenceNumber = $('#referenceNumber').val();
+                var state = $('#state').val();
+                if(referenceNumber === '' || state === '') {
+                    alert('Please fill out all required fields.');
+                } else {
+                    // Make an AJAX call to retrieve the application status
+                    alert('Status retrieved for Reference Number: ' + referenceNumber);
+                }
+            });
+        });
+
+        
+    </script>
+</body>
+</html>

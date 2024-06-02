@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download e-EPIC</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Roboto', sans-serif;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 50px;
+        }
+        .header-title {
+            display: flex;
+            align-items: center;
+        }
+        .header-title h1 {
+            margin-left: 10px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .header-user {
+            display: flex;
+            align-items: center;
+        }
+        .header-user img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .sidebar {
+            background-color: #343a40;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .content {
+            padding: 15px;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+        .header .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .header .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .header .user-info img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .table-responsive {
+            margin-top: 20px;
+        }
+        .form-control,
+        .btn {
+            margin-top: 10px;
+        }
+        .update-info {
+            margin-top: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">
+            <img src="https://voters.eci.gov.in/static/media/Portallogo.239672214918b407e9c7d3e4312b8ac4.svg" alt="Election Commission of India Logo">
+            <h1>भारत निर्वाचन आयोग / Election Commission of India</h1>
+        </div>
+        <div class="header-user">
+            <img src="https://voters.eci.gov.in/static/media/profile.3ccdd616bcbd743c61a316db672c000a.svg" alt="User Icon">
+            <div>मतदाता सेवा पोर्टल / VOTERS' SERVICE PORTAL<br>Priya Rani Verma</div>
+        </div>
+    </div>
+    <div class="d-flex">
+        <div class="sidebar">
+            <a href="form.html"><i class="fas fa-file-alt"></i> Forms</a>
+            <a href="application with tracking.html"><i class="fas fa-truck"></i> Track Application Status</a>
+            <a href="self and family.html"><i class="fas fa-user"></i> Self and Family</a>
+            <a href="change password.html"><i class="fas fa-key"></i> Change Password</a>
+            <a href="#" class="active"><i class="fas fa-id-card"></i> Download e-EPIC</a>
+        </div>
+        <div class="content">
+            <h3>Download electronic copy of EPIC Card</h3>
+            <form>
+                <div class="form-group">
+                    <label for="epic_no">Enter EPIC_NO</label>
+                    <input type="text" class="form-control" id="epic_no" value="SWD7534290">
+                </div>
+                <div class="form-group">
+                    <label for="state">Select State</label>
+                    <select class="form-control" id="state">
+                        <option>Telangana</option>
+                        <!-- Other states can be added here -->
+                    </select>
+                </div>
+                <button type="button" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>EPIC No.</th>
+                            <th>Name</th>
+                            <th>Relative Name</th>
+                            <th>State</th>
+                            <th>AC</th>
+                            <th>Mobile No.</th>
+                            <th>Email ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SWD3748643</td>
+                            <td>Priya Rani Verma</td>
+                            <td>Sunil Verma</td>
+                            <td>Telangana</td>
+                            <td>Serilingampally</td>
+                            <td>XXXXXX3210</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="update-info">
+                The facility to update your mobile no. is available in Form8.
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

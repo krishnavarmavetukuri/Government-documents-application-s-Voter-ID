@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Commission of India Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f2f5;
+        }
+        .container {
+            display: flex;
+            width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .left {
+            background-color: #253a81;
+            color: white;
+            padding: 40px;
+            width: 40%;
+            text-align: center;
+        }
+        .left img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        .left h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .right {
+            background-color: white;
+            padding: 40px;
+            width: 60%;
+        }
+        .right h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        .right form {
+            display: flex;
+            flex-direction: column;
+        }
+        .right form label {
+            margin: 10px 0 5px;
+        }
+        .right form input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .right form button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .right form button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .right form .signup {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .right form .signup a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .right form .signup a:hover {
+            text-decoration: underline;
+        }
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="https://voters.eci.gov.in/static/media/Portallogo.239672214918b407e9c7d3e4312b8ac4.svg" alt="Election Commission of India Logo">
+            <h2>भारत निर्वाचन आयोग<br>Election Commission of India</h2>
+        </div>
+        <div class="right">
+            <h2>Sign-Up</h2>
+            
+            <form id="loginForm">
+                <label for="registered-id">Registered Mobile No./EPIC No.<span class="required">*</span></label>
+                <input type="text" id="registered-id" name="registered-id" required>
+                <label for="email">Email (optional)</label>
+                <input type="email" id="email" name="email">
+                <button type="submit" id="submit-button" disabled>Continue</button>
+                <div class="signup">
+                    <p>Already have an account? <a href="Login.html" id="loginLink">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const registeredIdInput = document.getElementById('registered-id');
+            const emailInput = document.getElementById('email');
+            const submitButton = document.getElementById('submit-button');
+    
+            function validateForm() {
+                if (registeredIdInput.value.trim() !== '') {
+                    submitButton.disabled = false;
+                } else {
+                    submitButton.disabled = true;
+                }
+            }
+    
+            registeredIdInput.addEventListener('input', validateForm);
+            emailInput.addEventListener('input', validateForm);
+    
+            const loginLink = document.getElementById('loginLink');
+            loginLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                window.location.href = 'home_new.php';
+            });
+    
+            const loginForm = document.getElementById('loginForm');
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form submission
+                window.location.href = 'sign up 2.html'; // Redirect to home new.html
+            });
+        });
+    </script>
+    
+</body>
+</html>
