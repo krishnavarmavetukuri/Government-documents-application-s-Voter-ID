@@ -1,6 +1,6 @@
 # Government-documents-application-s-Voter-ID
 
-This is the List of Tables in the Votersdb Database created in MySQL server using xampp
+1) This is the List of Tables in the Votersdb Database created in MySQL server using xampp
 ![1](https://github.com/krishnavarmavetukuri/Government-documents-application-s-Voter-ID/assets/114820481/c7a6440a-12a2-4800-b184-df8b5ab7adc4)
 
 2) The First Table that is updated is **users table**. 
