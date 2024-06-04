@@ -9,6 +9,7 @@ The **EPIC Number is NULL** because it is still not generated as the user has to
 Until then the user can login using Mobile number or Email ID
 ![2](https://github.com/krishnavarmavetukuri/Government-documents-application-s-Voter-ID/assets/114820481/77eac0db-9a78-4e0d-a1d1-ea85e2a8f870)
 
+3) **States Table** is used for setting up the drop down box for states list 
 ![3](https://github.com/krishnavarmavetukuri/Government-documents-application-s-Voter-ID/assets/114820481/e0c6e36f-3388-48f2-99fb-30c028d87a09)
 
 ![4](https://github.com/krishnavarmavetukuri/Government-documents-application-s-Voter-ID/assets/114820481/a1b9a4f7-1f6f-47bf-be22-abb0f0eb0668)
