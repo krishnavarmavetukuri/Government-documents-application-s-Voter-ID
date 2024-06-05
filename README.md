@@ -1,7 +1,9 @@
 # Government-documents-application-s-Voter-ID
 
 **Frontend: HTML, CSS, JavaScript**
+
 **Backend: PHP using xampp**
+
 **Database: MySQL usinf xampp**
 
 
