@@ -4,7 +4,7 @@
 
 **Backend: PHP using xampp**
 
-**Database: MySQL usinf xampp**
+**Database: MySQL using xampp**
 
 
 1) This is the List of Tables in the Votersdb Database created in MySQL server using xampp
